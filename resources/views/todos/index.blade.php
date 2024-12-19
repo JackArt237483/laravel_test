@@ -1,7 +1,5 @@
 @extends('layouts.app')
 
-@section('title', 'Task List') <!-- Заголовок страницы -->
-
 @section('content')
     <h1>ToDo List</h1>
 
@@ -16,7 +14,7 @@
 
     <!-- Список задач -->
     <ul>
-        @forelse ($todos as $todo)
+        @forelse($todos as $todo)
             <li>
                 {{ $todo->title }} - {{ $todo->category ?? 'No Category' }} - Priority: {{ $todo->priority }}
                 @if ($todo->is_completed)

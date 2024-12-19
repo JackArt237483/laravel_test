@@ -1,24 +1,24 @@
 <?php
-
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
+use App\Models\Todo;
+use App\Policies\TodoPolicy;
+use Illuminate\Support\Facades\Gate;
+use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
-class AppServiceProvider extends ServiceProvider
+class AuthServiceProvider extends ServiceProvider
 {
     /**
-     * Register any application services.
+     * The policy mappings for the application.
+     *
+     * @var array
      */
-    public function register(): void
-    {
-        //
-    }
+    protected $policies = [
+        Todo::class => TodoPolicy::class, // Здесь регистрируем политику для модели Todo
+    ];
 
-    /**
-     * Bootstrap any application services.
-     */
-    public function boot(): void
+    public function boot()
     {
-        //
+        $this->registerPolicies();
     }
 }

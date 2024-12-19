@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -9,13 +8,13 @@ class Todo extends Model
 {
     use HasFactory;
 
-    protected $fillable= [
+    protected $fillable = [
         'title',
         'user_id',
         'category',
         'priority',
         'is_completed',
     ];
-    // массив, который указывает, какие поля модели можно массово заполнять
 }
+
 ?>

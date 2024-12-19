@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Create Task') <!-- Заголовок страницы -->
+@section('title', 'Create New Task')
 
 @section('content')
     <h1>Create New Task</h1>
